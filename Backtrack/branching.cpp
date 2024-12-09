@@ -1,18 +1,6 @@
 /*
- • Thuật toán quay lui cho phép ta giải các bài toán liệt kê tổ hợp và bài toán tối ưu tổ hợp
- • Phương án được mô hình hóa bằng một dãy các biến quyết định X1, X2, . . ., Xn
- • Cần tìm cho mỗi biến Xi một giá trị từ 1 tập rời rạc Ai cho trước sao cho
-    • Các ràng buộc của bài toán được thỏa mãn
-    • Tối ưu một hàm mục tiêu cho trước
- • Tìm kiếm quay lui
- • Duyệt qua tất cả các biến (ví dụ thứ tự từ X1, X2, . . ., Xn), với mỗi biến Xk
- • Duyệt lần lượt qua tất cả các giá trị có thể gán cho Xk, với mỗi giá trị v 
-• Kiểm tra ràng buộc
- • Gán cho Xk
- • Nếu k=n thì ghi nhận một phương án
- • Ngược lại, xét tiếp biến Xk+1
+Nhánh cận, backtrack mở rộng, cấu trúc cơ bản:
 */
-
 
 #include <bits/stdc++.h>
 
@@ -30,8 +18,16 @@ int n;
 
 vector<int> a;
 
+// lưu trữ kết quả tốt nhất tìm được
+int f_rec;
+
+// Lưu trữ kết quả hiện tại, có thể đưa vào trong hàm backtrack
+int res;
+
 // In ra 1 phương án thỏa mãn
 void solution() {
+    // Cập nhập f_rec và ghi ra kết quả
+    f_rec = min(f_rec, res);
     for (int i = 1;i <= n;i++) {
         cout << a[i] << " ";
     }
@@ -39,7 +35,7 @@ void solution() {
 }
 
 // Kiểm tra bước thử có hợp lệ hay không 
-void check(int k,int v) {
+bool check(int k,int v) {
     return true;
 }
 
@@ -51,7 +47,8 @@ void backtrack(int k) {
             if (k == n) { // Điều kiện dừng
                 solution(); 
             } else {
-                backtrack(k+1); // Thử tiếp
+                if (g(X1, X2, …, Xk) < f_rec) // Hàm cận dưới
+                    backtrack(k+1); // Thử tiếp chỉ khi phương án cụ thể này có khả năng tốt hơn.
             }
             // [Recover the data structure D]
         }
