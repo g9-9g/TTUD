@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define MAXN 1000000
+#define MAXN 1000009
 #define long long int
 #define INF (int) 1e9+69
 #define MOD 1000000007
