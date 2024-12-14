@@ -6,7 +6,6 @@ Nhánh cận, backtrack mở rộng, cấu trúc cơ bản:
 
 using namespace std;
 
-
 #define MAXN 1000000
 #define long long int
 #define INF (int) 1e9+69
@@ -34,7 +33,7 @@ void solution() {
     cout << endl;
 }
 
-// Kiểm tra bước thử có hợp lệ hay không 
+// Kiểm tra bước thử có hợp lệ hay không
 bool check(int k,int v) {
     return true;
 }
@@ -45,7 +44,7 @@ void backtrack(int k) {
         if (check(k,v)) {
             a[k] = v; // [Update a data structure D]
             if (k == n) { // Điều kiện dừng
-                solution(); 
+                solution();
             } else {
                 if (g(X1, X2, …, Xk) < f_rec) // Hàm cận dưới
                     backtrack(k+1); // Thử tiếp chỉ khi phương án cụ thể này có khả năng tốt hơn.

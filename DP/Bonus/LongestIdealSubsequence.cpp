@@ -23,18 +23,18 @@ int main() {
 
     cin >> s >> k;
     int n = s.size();
-    unordered_map <int, int> mp;
+    unordered_map <int, int> dp; // dp hash map
     for (int i = 0;i < n;i++) {
-        // mp[s[i]]++;
+        // dp[s[i]]++;
         for (int j = max((int)'a', s[i] - k);j <= min((int)'z', s[i] + k);j++) {
-            mp[s[i]] = max(mp[j],mp[s[i]]);
+            dp[s[i]] = max(dp[j],dp[s[i]]);
         }
-        mp[s[i]] ++;
-        // cout << mp[s[i]] << endl;
+        dp[s[i]] ++;
+        // cout << dp[s[i]] << endl;
     }
     int res = 0;
     for (int i = 0;i < n;i++) {
-        res = max(res, mp[s[i]]);
+        res = max(res, dp[s[i]]);
     }
     cout << res << endl;
     return 0;
