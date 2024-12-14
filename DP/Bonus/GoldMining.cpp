@@ -34,6 +34,31 @@ int n, L1, L2;
 
 vector<int> a;
 
+// Segment tree solution
+void solve() {
+    cin >> n >> L1 >> L2;
+    a.resize(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    SegmentTree segTree; // max tree
+    segTree.init(n);
+    vector<int> dp(n, -INF);
+
+    for (int i = 0; i < n; i++) {
+        // L1 <= i -j < L2 -> j thuoc [i-L2, i-L1]
+        if (i - L1 >= 0) {
+            int l = max(0, i - L2);
+            int r = i - L1;
+            int max_val = segTree.query(l, r);
+            dp[i] = max(dp[i], max_val + a[i]);
+        } else {
+            dp[i] = a[i];
+        }
+        segTree.update(i, dp[i]);
+    }
+
+    cout << *max_element(dp.begin(), dp.end()) << endl;
+}
 
 
 int main() {

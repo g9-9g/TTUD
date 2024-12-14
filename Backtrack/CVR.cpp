@@ -1,18 +1,7 @@
 /*
-Thuật toán quay lui cho phép ta giải các bài toán liệt kê tổ hợp và bài toán tối
-ưu tổ hợp
-• Phương án được mô hình hóa bằng một dãy các biến quyết định X1, X2, . . ., Xn
-• Cần tìm cho mỗi biến Xi một giá trị từ 1 tập rời rạc Ai cho trước sao cho
-    • Các ràng buộc của bài toán được thỏa mãn
-    • Tối ưu một hàm mục tiêu cho trước
-Tìm kiếm quay lui
-• Duyệt qua tất cả các biến (ví dụ thứ tự từ X1, X2, . . ., Xn), với mỗi biến Xk
-    • Duyệt lần lượt qua tất cả các giá trị có thể gán cho Xk, với mỗi giá trị v
-        • Kiểm tra ràng buộc
-        • Gán cho Xk
-        • Nếu k = n thì ghi nhận một phương án
-        • Ngược lại, xét tiếp biến Xk+1
-
+A fleet of K identical trucks having capacity Q need to be scheduled to delivery pepsi packages from a central depot 0 to clients 1,2,…,n. Each client i requests d[i] packages. The distance from location i to location j is c[i,j], 0≤i,j≤n. A delivery solution is a set of routes: each truck is associated with a route, starting from depot, visiting some clients and returning to the depot for deliverying requested pepsi packages such that:
+Each client is visited exactly by one route
+Total number of packages requested by clients of each truck cannot exceed its capacity
 */
 
 #include <stdio.h>
