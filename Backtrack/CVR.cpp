@@ -204,6 +204,4 @@ Chiến lược duyệt
     • Ghi nhận số chặng (đoạn nối giữa 2 điểm liên tiếp trên đường đi)
     • Khi segments = N+nbR thì thu được phương án đầy đủ
 
-
-
 */

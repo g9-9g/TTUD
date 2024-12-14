@@ -34,6 +34,4 @@ int main () {
         cin >> a >> b >> c >> d;
         cout << prefix_sum2d[c][d] - prefix_sum2d[c][b-1] - prefix_sum2d[a-1][d] + prefix_sum2d[a-1][b-1] << endl;
     }
-
-
 }
