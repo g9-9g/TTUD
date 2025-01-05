@@ -37,7 +37,7 @@ int main() {
         for (int time = 0; time <= T;time++) {
             if (dp[i][time] == 0) continue;
             for (int j = i + 1; j <= i + D && j < N; j++) {
-                if (time + t[j] <= T) {
+                if (time + t[j] <= T) { // condition
                     dp[j][time + t[j]] = max(dp[j][time + t[j]], dp[i][time] + a[j]);
                 }
             }
