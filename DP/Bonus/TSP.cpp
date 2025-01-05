@@ -23,11 +23,11 @@ int tsp(int n, vector<vector<int>>& distances) {
     // Iterate over all possible subsets of cities
     for (int mask = 1; mask < (1 << n); ++mask) {
         for (int u = 0; u < n; ++u) {
-            // If city u is in the subset represented by mask
+            // If city u is in the subset represented by mask Chọn đỉnh u đã thăm trong mask
             if ((mask & (1 << u)) != 0) {
                 for (int v = 0; v < n; ++v) {
                     // If city v is not in the subset and the distance from u to v is not zero
-                    if ((mask & (1 << v)) == 0 && distances[u][v] != 0) {
+                    if ((mask & (1 << v)) == 0 && distances[u][v] != 0) { // Thêm điều kiện vào đây
                         dp[mask | (1 << v)][v] = min(dp[mask | (1 << v)][v], dp[mask][u] + distances[u][v]);
                     }
                 }

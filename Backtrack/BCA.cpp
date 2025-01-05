@@ -27,7 +27,7 @@ using namespace std;
 
 int m, n;
 vector<vector<int>> teacherPreferences; // Danh sách các môn học mỗi giảng viên có thể dạy
-vector<pair<int, int>> conflicts;       // Danh sách các cặp môn học xung đột
+vector<pair<int, int>> conflicts;       // Danh sách các cặp môn học xung đột 
 vector<int> courseAssignments;          // Giảng viên được giao cho mỗi môn học
 vector<int> teacherLoad;                // Tải của từng giảng viên (số môn được giao)
 int minMaxLoad = INT_MAX;               // Giá trị nhỏ nhất của tải lớn nhất giữa các giảng viên
